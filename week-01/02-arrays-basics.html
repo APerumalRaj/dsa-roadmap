@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays — The Foundation of Everything</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+        h1, h2, h3 { color: #333; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background: #f4f4f4; }
+        code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        .nav { margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; }
+        .nav a { display: inline-block; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; }
+        .nav a:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Arrays — The Foundation of Everything</h1>
+    <p><em>Every data structure is built on top of arrays or pointers. Master this, and everything else becomes easier.</em></p>
+
+    <h2>1. Intuition First</h2>
+    <p>Think of an array as a <strong>row of lockers in a school hallway</strong>.</p>
+    <ul>
+        <li>Each locker has a <strong>number</strong> (index) starting from 0</li>
+        <li>Each locker holds <strong>one thing</strong> (element)</li>
+        <li>You can go directly to locker #47 without opening lockers 0–46 (random access)</li>
+        <li>All lockers are the <strong>same size</strong> (same data type)</li>
+        <li>The row has a <strong>fixed length</strong> — you can't magically add more lockers in the middle</li>
+    </ul>
+    <p>That direct access is what makes arrays powerful. That fixed size is what makes them limited.</p>
+
+    <h2>2. Core Idea</h2>
+    <h3>What is it?</h3>
+    <p>An array is a <strong>contiguous block of memory</strong> that stores elements of the same type, accessible by index.</p>
+    <h3>Why it exists</h3>
+    <p>Because computers are really fast at one thing: <strong>going to a memory address and reading what's there</strong>. Arrays give every element a predictable address:</p>
+    <pre>address of element[i] = base_address + (i × size_of_element)</pre>
+    <p>This is why <code>arr[500]</code> is just as fast as <code>arr[0]</code> — it's just math, not searching.</p>
+
+    <h2>3. Array Operations</h2>
+    <h3>Creating an Array</h3>
+    <pre><code>// Fixed size, initialized to 0s
+int[] nums = new int[5];          // [0, 0, 0, 0, 0]
+
+// With values
+int[] nums = {10, 20, 30, 40, 50};
+
+// Length
+int size = nums.length;           // 5 (not a method, it's a field)</code></pre>
+
+    <h3>Accessing Elements</h3>
+    <pre><code>// Get element at index 0
+int first = nums[0];               // 10
+
+// Set element at index 2
+nums[2] = 35;                     // [10, 20, 35, 40, 50]</code></pre>
+
+    <h2>4. Time Complexity</h2>
+    <table>
+        <tr><th>Operation</th><th>Time Complexity</th><th>Reason</th></tr>
+        <tr><td>Access by index</td><td>O(1)</td><td>Direct memory calculation</td></tr>
+        <tr><td>Search (value)</td><td>O(n)</td><td>May need to check all elements</td></tr>
+        <tr><td>Insert at end</td><td>O(1)</td><td>If space available</td></tr>
+        <tr><td>Insert at beginning</td><td>O(n)</td><td>Shift all elements</td></tr>
+        <tr><td>Delete at end</td><td>O(1)</td><td>No shifting needed</td></tr>
+        <tr><td>Delete at beginning</td><td>O(n)</td><td>Shift all elements</td></tr>
+    </table>
+
+    <div class="nav">
+        <a href="../roadmap/full-roadmap.html">← Back to Roadmap</a>
+    </div>
+</body>
+</html>

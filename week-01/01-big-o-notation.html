@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big O Notation — Time & Space Complexity</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+        h1, h2, h3 { color: #333; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background: #f4f4f4; }
+        code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        .nav { margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; }
+        .nav a { display: inline-block; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; }
+        .nav a:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Big O Notation — Time & Space Complexity</h1>
+    <p><em>Before you write a single algorithm, you need to know how to <strong>judge</strong> one. This is that skill.</em></p>
+
+    <h2>1. Intuition First</h2>
+    <p>Imagine you're ordering food at two restaurants:</p>
+    <ul>
+        <li><strong>Restaurant A:</strong> Takes 5 minutes no matter how many people are there.</li>
+        <li><strong>Restaurant B:</strong> Takes 5 minutes per person ahead of you.</li>
+    </ul>
+    <p>If there are 3 people ahead: Restaurant B takes 15 min. 100 people? 500 min.</p>
+    <ul>
+        <li><strong>Restaurant A is O(1)</strong> — constant time.</li>
+        <li><strong>Restaurant B is O(n)</strong> — linear time, grows with input.</li>
+    </ul>
+    <p>Big O answers one question: <strong>As my input grows, how much slower does my code get?</strong></p>
+
+    <h2>2. Core Idea</h2>
+    <h3>What is it?</h3>
+    <p>Big O notation describes the <strong>upper bound</strong> of how an algorithm's time or space grows relative to input size <code>n</code>.</p>
+    <h3>Why it exists</h3>
+    <p>Because we don't care about exact milliseconds. We care about <strong>scalability</strong>.</p>
+    <p>An algorithm that takes 0.001 seconds for 10 items but 10 hours for 1 million items is <strong>useless</strong> in production. Big O helps you spot that before you ship it.</p>
+
+    <h2>3. The Common Complexities (Ranked Best → Worst)</h2>
+    <table>
+        <tr><th>Big O</th><th>Name</th><th>Example</th><th>1,000 items</th><th>1,000,000 items</th></tr>
+        <tr><td>O(1)</td><td>Constant</td><td>Array access by index</td><td>1 op</td><td>1 op</td></tr>
+        <tr><td>O(log n)</td><td>Logarithmic</td><td>Binary search</td><td>~10 ops</td><td>~20 ops</td></tr>
+        <tr><td>O(n)</td><td>Linear</td><td>Loop through array</td><td>1,000 ops</td><td>1,000,000 ops</td></tr>
+        <tr><td>O(n log n)</td><td>Linearithmic</td><td>Merge sort</td><td>~10,000 ops</td><td>~20,000,000 ops</td></tr>
+        <tr><td>O(n²)</td><td>Quadratic</td><td>Nested loops</td><td>1,000,000 ops</td><td>1,000,000,000,000 ops</td></tr>
+        <tr><td>O(2ⁿ)</td><td>Exponential</td><td>Recursive subsets</td><td>Forget it</td><td>Heat death of universe</td></tr>
+    </table>
+
+    <h2>4. Rules for Calculating Big O</h2>
+    <h3>Rule 1: Drop constants</h3>
+    <p><code>O(2n)</code> becomes <code>O(n)</code>. Constants don't matter at scale.</p>
+    <h3>Rule 2: Drop lower terms</h3>
+    <p><code>O(n² + n)</code> becomes <code>O(n²)</code>. The quadratic term dominates.</p>
+    <h3>Rule 3: Different inputs = different variables</h3>
+    <p>Two loops over <code>n</code>: <code>O(n + n) = O(2n) = O(n)</code>.</p>
+    <p>Nested loops: <code>O(n * n) = O(n²)</code>.</p>
+
+    <div class="nav">
+        <a href="../roadmap/full-roadmap.html">← Back to Roadmap</a>
+    </div>
+</body>
+</html>

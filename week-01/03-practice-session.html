@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 — Practice Session Guide</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+        h1, h2, h3 { color: #333; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background: #f4f4f4; }
+        code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        .nav { margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; }
+        .nav a { display: inline-block; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; margin-right: 10px; }
+        .nav a:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Week 1 — Practice Session Guide</h1>
+    <p><em>This is your practice plan for the week. 10 hours total. Don't rush.</em></p>
+
+    <h2>Schedule Suggestion</h2>
+    <table>
+        <tr><th>Day</th><th>Focus</th><th>Hours</th><th>What to Do</th></tr>
+        <tr><td>Day 1</td><td>Big O Notation</td><td>2h</td><td>Read Big O notes. Do all mini challenges.</td></tr>
+        <tr><td>Day 2</td><td>Arrays — Concepts</td><td>2h</td><td>Read Arrays notes. Code all patterns from scratch.</td></tr>
+        <tr><td>Day 3</td><td>Arrays — Easy Problems</td><td>2h</td><td>Solve problems 1–5 from the practice list below.</td></tr>
+        <tr><td>Day 4</td><td>Arrays — Medium Problems</td><td>2h</td><td>Solve problems 6–8. Brute force first, then optimize.</td></tr>
+        <tr><td>Day 5</td><td>Revision + Challenges</td><td>2h</td><td>Redo anything you struggled with. Try the hard problems.</td></tr>
+    </table>
+
+    <h2>Problem Set — Solve In Order</h2>
+    <h3>Easy (Must complete all)</h3>
+
+    <h4>1. Find Second Largest Element</h4>
+    <p><strong>Input:</strong> <code>[12, 35, 1, 10, 34, 1]</code></p>
+    <p><strong>Output:</strong> <code>34</code></p>
+    <p><strong>How to think:</strong></p>
+    <ul>
+        <li>Brute force: Sort, pick second from end. But that's O(n log n).</li>
+        <li>Better: Track two variables — <code>largest</code> and <code>secondLargest</code>. One pass, O(n).</li>
+    </ul>
+    <pre><code>int secondLargest(int[] arr) {
+    int first = Integer.MIN_VALUE;
+    int second = Integer.MIN_VALUE;
+
+    for (int num : arr) {
+        if (num > first) {
+            second = first;
+            first = num;
+        } else if (num > second && num != first) {
+            second = num;
+        }
+    }
+    return second;
+}</code></pre>
+    <p><strong>Edge cases to consider:</strong> All elements same? Array of size < 2?</p>
+
+    <h4>2. Remove Duplicates from Sorted Array</h4>
+    <p><strong>Input:</strong> <code>[1,1,2,2,3,3,3]</code></p>
+    <p><strong>Output:</strong> <code>3</code> (unique count)</p>
+    <p><strong>Hint:</strong> Use two pointers — one for reading, one for writing.</p>
+
+    <h4>3. Best Time to Buy and Sell Stock</h4>
+    <p><strong>Input:</strong> <code>[7,1,5,3,6,4]</code></p>
+    <p><strong>Output:</strong> <code>5</code> (buy at 1, sell at 6)</p>
+    <p><strong>Hint:</strong> Track minimum price so far, calculate max profit at each step.</p>
+
+    <h4>4. Rotate Array</h4>
+    <p><strong>Input:</strong> <code>[1,2,3,4,5,6,7]</code>, k=3</p>
+    <p><strong>Output:</strong> <code>[5,6,7,1,2,3,4]</code></p>
+    <p><strong>Hint:</strong> Reverse entire array, then reverse parts.</p>
+
+    <h4>5. Contains Duplicate</h4>
+    <p><strong>Input:</strong> <code>[1,2,3,1]</code></p>
+    <p><strong>Output:</strong> <code>true</code></p>
+    <p><strong>Hint:</strong> Use a HashSet for O(n) time.</p>
+
+    <h3>Medium (Try after easy)</h3>
+    <ul>
+        <li>3Sum — Find all unique triplets that sum to 0</li>
+        <li>Product of Array Except Self — No division allowed</li>
+        <li>Maximum Subarray (Kadane's Algorithm)</li>
+    </ul>
+
+    <div class="nav">
+        <a href="../roadmap/full-roadmap.html">← Back to Roadmap</a>
+    </div>
+</body>
+</html>

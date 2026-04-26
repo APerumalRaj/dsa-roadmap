@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-Month DSA Roadmap</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .status { margin-left: 10px; }
+        ul { list-style-type: none; }
+        li { margin: 5px 0; }
+        progress { width: 200px; }
+    </style>
+</head>
+<body>
+    <h1>6-Month DSA Roadmap — Interactive</h1>
+    <p>10 hours/week. Deep understanding. No shortcuts.</p>
+
+    <div id="progress">
+        Overall Progress: <progress id="prog" value="0" max="100"></progress> 0/100 steps completed
+    </div>
+
+    <div class="mermaid">
+mindmap
+  root((6-Month DSA Roadmap))
+    Phase 1: Foundations
+      Step 1-10: Basics
+        Big O & Arrays
+        Two Pointers & Sliding Window
+        Strings & Hashing
+      Step 11-20: Recursion
+        Recursion Intuition
+        Patterns & Practice
+      Step 21-29: Sorting & Search
+        Sorting Algorithms
+        Binary Search
+    Phase 2: Intermediate
+      Step 30-40: Linked Lists & Stacks
+        Linked Lists Basics & Patterns
+        Stacks & Queues
+      Step 41-50: Trees
+        Trees Basics & Traversals
+        Trees Patterns & BST
+      Step 51-67: Heaps & Graphs
+        Heaps & Graphs BFS/DFS
+        Advanced Graphs
+    Phase 3: Advanced
+      Step 68-80: DP
+        DP Intuition & 1D/2D
+        Advanced DP
+      Step 81-91: Backtracking & Greedy
+        Backtracking & Greedy
+      Step 92-100: Bit Manipulation & Review
+        Bit Manipulation
+        Mock Interviews & Revision
+    </div>
+
+    <h2>Phase 1: Foundations (Month 1–2)</h2>
+    <p>The goal here is to build rock-solid fundamentals. No rushing. If you can't do arrays and strings cleanly, trees and graphs will destroy you.</p>
+    <ul>
+        <li><strong>Step 1: Big O Theory</strong> What is time/space complexity and WHY it matters <a href="../week-01/01-big-o-notation.md">📖 Read Notes</a>
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 2: Arrays Basics</strong> Arrays: memory layout, access patterns, basic operations <a href="../week-01/02-arrays-basics.md">📖 Read Notes</a>
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 3: Practice Array Problems</strong> Problems: traversal, min/max, reverse, rotate <a href="../week-01/03-practice-session.md">💻 Practice Session</a>
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 4: Two Pointer Pattern</strong> Two pointer pattern (sorted arrays, pair sums)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 5: Sliding Window Technique</strong> Sliding window (subarrays of fixed/variable size)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 6: Kadane's Algorithm</strong> Kadane's algorithm (max subarray — the gateway drug to DP)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 7: Array Techniques Practice</strong> Solve 8-10 problems on these techniques
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 8: String Manipulation</strong> String manipulation, immutability, character arrays
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 9: String Patterns</strong> Common patterns: palindromes, anagrams, frequency counting
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 10: String Problems Practice</strong> Solve 8-10 string problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 11: Hashing Fundamentals</strong> What hashing actually is (not just "use a HashMap")
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 12: HashMap and HashSet Usage</strong> Frequency maps, two-sum pattern, grouping
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 13: Collision Handling</strong> Collision handling conceptually
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 14: Hashing Problems Practice</strong> Solve 8-10 hashing problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 15: Recursion Intuition</strong> What recursion really is (not "a function calling itself")
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 16: Call Stack and Base Cases</strong> The call stack, base cases, recursive leap of faith
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 17: Simple Recursion</strong> Simple recursion: factorial, fibonacci, power
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 18: Recursion Problems</strong> Solve 6-8 recursive problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 19: Recursion on Arrays/Strings</strong> Recursion on arrays and strings
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 20: Subsets and Permutations</strong> Generate subsets, permutations (intro to backtracking)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 21: Recursion Patterns Practice</strong> Solve 8-10 recursive pattern problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 22: Basic Sorting Algorithms</strong> Bubble, Selection, Insertion (understand, don't memorize)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 23: Merge Sort</strong> Merge Sort (divide and conquer thinking)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 24: Quick Sort</strong> Quick Sort (partitioning, pivot selection)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 25: Sorting Implementation</strong> Implement merge sort and quick sort from scratch
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 26: Sorting Problems</strong> Solve 6-8 sorting-related problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 27: Binary Search on Arrays</strong> Binary search on sorted arrays (the classic)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 28: Binary Search on Answer</strong> Binary search on answer (search space reduction)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 29: Binary Search Practice</strong> Solve 8-10 binary search problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+    </ul>
+
+    <h2>Phase 2: Intermediate + Patterns (Month 3–4)</h2>
+    <p>This is where you shift from "I can solve if I've seen it" to "I can figure it out."</p>
+    <ul>
+        <li><strong>Step 30: Singly Linked List</strong> Singly linked list from scratch
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 31: Linked List Operations</strong> Insertion, deletion, traversal, reversal
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 32: Linked List Implementation</strong> Implement a linked list without looking anything up
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 33: Linked List Problems</strong> Solve 6-8 linked list problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 34: Fast/Slow Pointer</strong> Fast/slow pointer (cycle detection, middle finding)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 35: Merging and Intersection</strong> Merge two sorted lists, intersection point
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 36: Linked List Patterns Practice</strong> Solve 8-10 linked list pattern problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 37: Stack Internals</strong> Stack internals, when to use stacks
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 38: Monotonic Stack</strong> Monotonic stack pattern
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 39: Stack Problems</strong> Problems: valid parentheses, next greater element, min stack
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 40: Queue and Circular Queue</strong> Queue, circular queue
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 41: Deque</strong> Deque, sliding window maximum with deque
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 42: BFS Preview</strong> BFS preview (queues are the backbone of BFS)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 43: Queue Problems</strong> Solve 6-8 queue and deque problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 44: Tree Basics</strong> What is a tree, binary tree, terminology
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 45: Traversals (Recursive)</strong> Inorder, preorder, postorder (recursive)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 46: Traversals (Iterative)</strong> Inorder, preorder, postorder (iterative)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 47: Level Order Traversal</strong> Level order traversal (BFS on trees)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 48: Tree Traversal Problems</strong> Solve 8-10 tree traversal problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 49: Tree Properties</strong> Height, diameter, balanced check, LCA
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 50: Path Sum Problems</strong> Path sum problems, symmetric tree
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 51: Tree Pattern Problems</strong> Solve 8-10 tree pattern problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 52: BST Property</strong> BST property, search, insert, delete
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 53: BST Operations</strong> Validate BST, kth smallest, inorder successor
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 54: BST Problems</strong> Solve 8-10 BST problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 55: Heap Internals</strong> How heaps work internally (array-based tree)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 56: Heap Types</strong> Min-heap, max-heap, heapify
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 57: Top-K Problems</strong> Top-K problems, merge K sorted lists
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 58: Heap Problems</strong> Solve 8-10 heap problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 59: Graph Representations</strong> Graph representations (adjacency list/matrix)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 60: BFS</strong> BFS from scratch
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 61: DFS</strong> DFS from scratch
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 62: Graph Concepts</strong> Connected components, cycle detection
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 63: BFS/DFS Problems</strong> Solve 8-10 BFS/DFS problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 64: Topological Sort</strong> Topological sort
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 65: Dijkstra's Algorithm</strong> Dijkstra's shortest path
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 66: Union-Find</strong> Union-Find (Disjoint Set)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 67: Advanced Graph Problems</strong> Solve 8-10 advanced graph problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+    </ul>
+
+    <h2>Phase 3: Advanced + Interview Level (Month 5–6)</h2>
+    <p>This is where you become dangerous.</p>
+    <ul>
+        <li><strong>Step 68: DP Intuition</strong> What DP really is (not memorization of patterns)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 69: Core DP Concepts</strong> Overlapping subproblems, optimal substructure
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 70: Top-Down Approach</strong> Top-down (memoization) approach
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 71: Basic DP Problems</strong> Fibonacci, climbing stairs, coin change
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 72: DP Problems</strong> Solve 6-8 DP problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 73: Bottom-Up Approach</strong> Bottom-up (tabulation) approach
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 74: 1D DP Problems</strong> House robber, decode ways, longest increasing subsequence
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 75: Conversion</strong> Convert any top-down solution to bottom-up
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 76: 1D DP Problems</strong> Solve 8-10 1D DP problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 77: 2D DP Setup</strong> Grid-based DP (unique paths, min path sum)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 78: Sequence DP</strong> Longest common subsequence
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 79: Edit Distance</strong> Edit distance
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 80: 2D DP Problems</strong> Solve 6-8 2D DP problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 81: Knapsack Variants</strong> Knapsack variants (0/1, unbounded)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 82: Partition Problems</strong> Partition problems, subset sum
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 83: Advanced DP Problems</strong> Solve 8-10 advanced DP problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 84: Backtracking Template</strong> Backtracking template
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 85: Classic Problems</strong> N-Queens, Sudoku solver
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 86: Combinations and Permutations</strong> Subsets, combinations, permutations (revisited deeper)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 87: Backtracking Problems</strong> Solve 8-10 backtracking problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 88: Greedy Choice Property</strong> Greedy choice property, when greedy works
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 89: Greedy Problems</strong> Activity selection, jump game, meeting rooms
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 90: Greedy vs DP</strong> Greedy vs DP: how to tell the difference
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 91: Greedy Problems</strong> Solve 8-10 greedy problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 92: Bit Operations</strong> Bit operations: AND, OR, XOR, shifts
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 93: Common Problems</strong> Single number, power of 2, counting bits
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 94: Trie Basics</strong> Trie basics (if time permits)
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 95: Bit Manipulation Problems</strong> Solve 8-10 bit manipulation problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 96: Mock Interviews</strong> Simulate real interview conditions
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 97: Timed Problems</strong> 2 problems in 45 minutes
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 98: Review Weak Areas</strong> Review weak areas
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 99: Top Problems</strong> Revisit top 20 most important problems
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+        <li><strong>Step 100: Reflect & Review</strong> Goal: Perform under pressure. You're ready.
+            <select class="status" onchange="updateProgress()">
+                <option selected>Not Visited</option>
+                <option>In Progress</option>
+                <option>Hold</option>
+                <option>Completed</option>
+            </select>
+        </li>
+    </ul>
+
+    <h2>Key Principles Throughout</h2>
+    <ol>
+        <li>Never move on until you truly understand. Falling behind schedule is fine. Faking understanding is not.</li>
+        <li>Solve problems without hints first. Struggle for 20–30 minutes minimum.</li>
+        <li>After solving, read other solutions. There's always a cleaner way.</li>
+        <li>Revise weekly. Friday = revisit Monday's problems.</li>
+        <li>Track what you struggle with. Patterns emerge. Attack weaknesses.</li>
+    </ol>
+
+    <h2>Weekly Time Split (10 hours)</h2>
+    <table border="1">
+        <tr><th>Activity</th><th>Hours</th></tr>
+        <tr><td>Concept study (reading notes)</td><td>2</td></tr>
+        <tr><td>Code implementation</td><td>3</td></tr>
+        <tr><td>Problem solving</td><td>4</td></tr>
+        <tr><td>Revision & reflection</td><td>1</td></tr>
+    </table>
+
+    <p><strong>Remarks:</strong> Add personal notes in <a href="remarks.md">remarks.md</a>.</p>
+
+    <script>
+        function updateProgress() {
+            const selects = document.querySelectorAll('.status');
+            let completed = 0;
+            selects.forEach(select => {
+                if (select.value === 'Completed') completed++;
+            });
+            const progress = document.getElementById('prog');
+            progress.value = completed;
+            document.getElementById('progress').innerHTML = `Overall Progress: <progress id="prog" value="${completed}" max="100"></progress> ${completed}/100 steps completed`;
+        }
+        // Initial call
+        updateProgress();
+    </script>
+</body>
+</html>

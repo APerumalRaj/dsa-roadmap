@@ -3,70 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>6-Month DSA Roadmap</title>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <title>DSA Learning Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .status { margin-left: 10px; }
-        ul { list-style-type: none; }
-        li { margin: 5px 0; }
-        progress { width: 200px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+            padding-bottom: 50px;
+        }
+        .header {
+            background: linear-gradient(135deg, #e94560 0%, #533483 100%);
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; position: relative; z-index: 1; }
+        .header .subtitle { font-size: 1.1rem; opacity: 0.9; position: relative; z-index: 1; }
+        .header .meta { display: flex; justify-content: center; gap: 30px; margin-top: 20px; position: relative; z-index: 1; flex-wrap: wrap; }
+        .header .meta-item { background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 25px; font-size: 0.9rem; }
+        .progress-container { background: #1a1a2e; padding: 20px; margin: -30px auto 30px; max-width: 800px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); position: relative; z-index: 2; }
+        .progress-label { display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: 600; }
+        .progress-bar { height: 20px; background: #0f3460; border-radius: 10px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #e94560, #533483); border-radius: 10px; transition: width 0.5s ease; width: 4%; }
+        .phase { max-width: 900px; margin: 0 auto 30px; padding: 0 20px; }
+        .phase-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .phase-number { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; }
+        .phase-title { font-size: 1.5rem; }
+        .phase-subtitle { font-size: 0.9rem; opacity: 0.8; }
+        .phase-1 .phase-number { background: linear-gradient(135deg, #ff6b6b, #ee5a24); }
+        .phase-1 .phase-title { color: #ff6b6b; }
+        .phase-2 .phase-number { background: linear-gradient(135deg, #48dbfb, #0abde3); }
+        .phase-2 .phase-title { color: #48dbfb; }
+        .phase-3 .phase-number { background: linear-gradient(135deg, #1dd1a1, #10ac84); }
+        .phase-3 .phase-title { color: #1dd1a1; }
+        .weeks-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
+        .week-card { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden; }
+        .week-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--card-color, #e94560); }
+        .week-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .week-card.current { border: 2px solid #e94560; background: rgba(233, 69, 96, 0.1); }
+        .week-card.completed { opacity: 0.6; }
+        .week-card.completed::before { background: #1dd1a1; }
+        .week-number { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7; margin-bottom: 5px; }
+        .week-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; }
+        .week-topics { font-size: 0.85rem; opacity: 0.8; line-height: 1.5; }
+        .week-status { position: absolute; top: 15px; right: 15px; font-size: 1.2rem; }
+        .philosophy { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .philosophy h2 { text-align: center; font-size: 1.8rem; margin-bottom: 20px; background: linear-gradient(90deg, #e94560, #533483); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .philosophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .philosophy-card { background: linear-gradient(135deg, rgba(233, 69, 96, 0.2), rgba(83, 52, 131, 0.2)); border-radius: 15px; padding: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.1); }
+        .philosophy-card .icon { font-size: 2rem; margin-bottom: 10px; }
+        .philosophy-card h3 { font-size: 1rem; margin-bottom: 5px; }
+        .philosophy-card p { font-size: 0.85rem; opacity: 0.8; }
+        .footer { text-align: center; padding: 30px; opacity: 0.6; font-size: 0.9rem; }
+        @media (max-width: 600px) { .header h1 { font-size: 1.8rem; } .header .meta { flex-direction: column; gap: 10px; } .phase-title { font-size: 1.2rem; } .weeks-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-    <h1>6-Month DSA Roadmap — Interactive</h1>
-    <p>10 hours/week. Deep understanding. No shortcuts.</p>
-
-    <div id="progress">
-        Overall Progress: <progress id="prog" value="0" max="100"></progress> 0/100 steps completed
+    <header class="header">
+        <h1>🚀 DSA Learning Journey</h1>
+        <p class="subtitle">Zero to Google-Level in 6 Months</p>
+        <div class="meta">
+            <span class="meta-item">📅 Start: April 25, 2026</span>
+            <span class="meta-item">⏱️ 10 hours/week</span>
+            <span class="meta-item">🎯 Crack Top-Tier Interviews</span>
+        </div>
+    </header>
+    <div class="progress-container">
+        <div class="progress-label"><span>Overall Progress</span><span id="progress-text">1/26 weeks</span></div>
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
     </div>
-
-    <div class="mermaid">
-mindmap
-  root((6-Month DSA Roadmap))
-    Phase 1: Foundations
-      Step 1-10: Basics
-        Big O & Arrays
-        Two Pointers & Sliding Window
-        Strings & Hashing
-      Step 11-20: Recursion
-        Recursion Intuition
-        Patterns & Practice
-      Step 21-29: Sorting & Search
-        Sorting Algorithms
-        Binary Search
-    Phase 2: Intermediate
-      Step 30-40: Linked Lists & Stacks
-        Linked Lists Basics & Patterns
-        Stacks & Queues
-      Step 41-50: Trees
-        Trees Basics & Traversals
-        Trees Patterns & BST
-      Step 51-67: Heaps & Graphs
-        Heaps & Graphs BFS/DFS
-        Advanced Graphs
-    Phase 3: Advanced
-      Step 68-80: DP
-        DP Intuition & 1D/2D
-        Advanced DP
-      Step 81-91: Backtracking & Greedy
-        Backtracking & Greedy
-      Step 92-100: Bit Manipulation & Review
-        Bit Manipulation
-        Mock Interviews & Revision
-    </div>
-
-    <h2>Phase 1: Foundations (Month 1–2)</h2>
-    <p>The goal here is to build rock-solid fundamentals. No rushing. If you can't do arrays and strings cleanly, trees and graphs will destroy you.</p>
-    <ul>
-        <li><strong>Step 1: Big O Theory</strong> What is time/space complexity and WHY it matters <a href="../week-01/01-big-o-notation.html">📖 Read Notes</a>
-            <select class="status" onchange="updateProgress()">
-                <option selected>Not Visited</option>
-                <option>In Progress</option>
-                <option>Hold</option>
-                <option>Completed</option>
-            </select>
-        </li>
+    <section class="philosophy">
+        <h2>💡 Our Philosophy</h2>
+        <div class="philosophy-grid">
+            <div class="philosophy-card"><div class="icon">🧠</div><h3>Intuition First</h3><p>Understand the "why" before the "how"</p></div>
+            <div class="philosophy-card"><div class="icon">🎯</div><h3>Deep Understanding</h3><p>Patterns over brute-force repetition</p></div>
+            <div class="philosophy-card"><div class="icon">💭</div><h3>Think First, Code Second</h3><p>Plan your approach before writing</p></div>
+            <div class="philosophy-card"><div class="icon">📊</div><h3>Quality Over Quantity</h3><p>Master key patterns thoroughly</p></div>
+        </div>
+    </section>
+    <section class="phase phase-1">
+        <div class="phase-header"><div class="phase-number">1</div><div><h2 class="phase-title">Foundations</h2><p class="phase-subtitle">Month 1-2 • Building the bedrock</p></div></div>
+        <div class="weeks-grid">
+            <div class="week-card current" style="--card-color: #ff6b6b;"><span class="week-status">🟡</span><div class="week-number">Week 01</div><div class="week-title">Big O & Arrays</div><div class="week-topics">Time complexity, array operations</div></div>
+            <div class="week-card" style="--card-color: #ff6b6b;"><span class="week-status">⬜</span><div class="week-number">Week 02</div><div class="week-title">Two Pointers</div><div class="week-topics">Sorted arrays, pair sums, sliding window</div></div>
+            <div class="week-card" style="--card-color: #ff6b6b;"><span class="week-status">⬜</span><div class="week-number">Week 03</div><div class="week-title">Strings Basics</div><div class="week-topics">String manipulation, character arrays</div></div>
+            <div class="week-card" style="--card-color: #ff6b6b;"><span class="week-status">⬜</span><div class="week-number">Week 04</div><div class="week-title">Hashing Intro</div><div class="week-topics">HashMap, HashSet, frequency counting</div></div>
+            <div class="week-card" style="--card-color: #ff6b6b;"><span class="week-status">⬜</span><div class="week-number">Week 05-06</div><div class="week-title">Recursion</div><div class="week-topics">Call stack, base cases, recursive patterns</div></div>
+            <div class="week-card" style="--card-color: #ff6b6b;"><span class="week-status">⬜</span><div class="week-number">Week 07-08</div><div class="week-title">Sorting & Search</div><div class="week-topics">Merge sort, quick sort, binary search</div></div>
+        </div>
+    </section>
+    <section class="phase phase-2">
+        <div class="phase-header"><div class="phase-number">2</div><div><h2 class="phase-title">Intermediate</h2><p class="phase-subtitle">Month 3-4 • Data structures galore</p></div></div>
+        <div class="weeks-grid">
+            <div class="week-card" style="--card-color: #48dbfb;"><span class="week-status">⬜</span><div class="week-number">Week 09-10</div><div class="week-title">Linked Lists</div><div class="week-topics">Singly, doubly, cycle detection</div></div>
+            <div class="week-card" style="--card-color: #48dbfb;"><span class="week-status">⬜</span><div class="week-number">Week 11-12</div><div class="week-title">Stacks & Queues</div><div class="week-topics">LIFO, FIFO, monotonic stacks</div></div>
+            <div class="week-card" style="--card-color: #48dbfb;"><span class="week-status">⬜</span><div class="week-number">Week 13-14</div><div class="week-title">Trees</div><div class="week-topics">Binary trees, traversals, BST</div></div>
+            <div class="week-card" style="--card-color: #48dbfb;"><span class="week-status">⬜</span><div class="week-number">Week 15-16</div><div class="week-title">Heaps & Graphs</div><div class="week-topics">Priority queues, BFS, DFS</div></div>
+        </div>
+    </section>
+    <section class="phase phase-3">
+        <div class="phase-header"><div class="phase-number">3</div><div><h2 class="phase-title">Advanced</h2><p class="phase-subtitle">Month 5-6 • Master level</p></div></div>
+        <div class="weeks-grid">
+            <div class="week-card" style="--card-color: #1dd1a1;"><span class="week-status">⬜</span><div class="week-number">Week 17-20</div><div class="week-title">Graphs Advanced</div><div class="week-topics">Dijkstra, topological sort</div></div>
+            <div class="week-card" style="--card-color: #1dd1a1;"><span class="week-status">⬜</span><div class="week-number">Week 21-24</div><div class="week-title">Dynamic Programming</div><div class="week-topics">1D, 2D, memoization, tabulation</div></div>
+            <div class="week-card" style="--card-color: #1dd1a1;"><span class="week-status">⬜</span><div class="week-number">Week 25-26</div><div class="week-title">Final Sprint</div><div class="week-topics">Greedy, bit manipulation, mocks</div></div>
+        </div>
+    </section>
+    <footer class="footer"><p>🎓 Built with dedication • 26 weeks to mastery</p></footer>
+</body>
+</html>
         <li><strong>Step 2: Arrays Basics</strong> Arrays: memory layout, access patterns, basic operations <a href="../week-01/02-arrays-basics.html">📖 Read Notes</a>
             <select class="status" onchange="updateProgress()">
                 <option selected>Not Visited</option>

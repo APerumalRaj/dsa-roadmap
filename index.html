@@ -33,19 +33,32 @@
 
         // ==================== DATA ====================
         const roadmapData = [
-            { id: 1, title: "Week 01", subtitle: "Big O & Arrays", topics: ["Time complexity", "Array operations"], steps: [{ id: 1, title: "Big O Notation", description: "Understand time and space complexity. Learn how to analyze algorithm efficiency." }, { id: 2, title: "Arrays Basics", description: "Master array operations, memory layout, and access patterns." }, { id: 3, title: "Practice Session", description: "Apply what you've learned. Solve array problems." }] },
-            { id: 2, title: "Week 02", subtitle: "Two Pointers", topics: ["Sorted arrays", "Sliding window"], steps: [{ id: 1, title: "Two Pointer Pattern", description: "Learn the two-pointer technique for sorted arrays." }, { id: 2, title: "Sliding Window", description: "Master fixed and variable sliding window." }, { id: 3, title: "Practice Problems", description: "Solve 10+ problems using these techniques." }] },
-            { id: 3, title: "Week 03", subtitle: "Strings", topics: ["String manipulation", "Character arrays"], steps: [{ id: 1, title: "String Basics", description: "Understand string immutability and operations." }, { id: 2, title: "String Methods", description: "Learn built-in string methods." }, { id: 3, title: "Practice Session", description: "Solve string problems." }] },
-            { id: 4, title: "Week 04", subtitle: "Hashing", topics: ["HashMap", "HashSet"], steps: [{ id: 1, title: "Hashing Fundamentals", description: "Understand hash functions and collision handling." }, { id: 2, title: "HashMap & HashSet", description: "Master frequency counting and uniqueness." }, { id: 3, title: "Hashing Problems", description: "Solve two-sum and anagram problems." }] },
-            { id: 5, title: "Week 05-06", subtitle: "Recursion", topics: ["Call stack", "Base cases"], steps: [{ id: 1, title: "Recursion Intuition", description: "Build mental model of recursion." }, { id: 2, title: "Base Cases", description: "Learn to identify correct base cases." }, { id: 3, title: "Recursive Patterns", description: "Master factorial, fibonacci patterns." }, { id: 4, title: "Practice Problems", description: "Solve 15+ recursion problems." }] },
-            { id: 6, title: "Week 07-08", subtitle: "Sorting & Search", topics: ["Merge sort", "Binary search"], steps: [{ id: 1, title: "Basic Sorting", description: "Understand bubble, selection sort." }, { id: 2, title: "Merge Sort", description: "Master divide-and-conquer sorting." }, { id: 3, title: "Quick Sort", description: "Learn partitioning techniques." }, { id: 4, title: "Binary Search", description: "Master binary search on sorted arrays." }] },
-            { id: 7, title: "Week 09-10", subtitle: "Linked Lists", topics: ["Singly", "Doubly", "Cycle"], steps: [{ id: 1, title: "Linked List Basics", description: "Understand node structure and traversal." }, { id: 2, title: "Reversal Patterns", description: "Master linked list reversal." }, { id: 3, title: "Cycle Detection", description: "Learn Floyd's algorithm." }, { id: 4, title: "Practice Problems", description: "Solve 15+ linked list problems." }] },
-            { id: 8, title: "Week 11-12", subtitle: "Stacks & Queues", topics: ["LIFO", "FIFO"], steps: [{ id: 1, title: "Stack Operations", description: "Master push, pop, peek operations." }, { id: 2, title: "Queue Operations", description: "Understand FIFO and BFS." }, { id: 3, title: "Monotonic Stacks", description: "Learn next greater/smaller elements." }, { id: 4, title: "Practice Problems", description: "Solve stack problems." }] },
-            { id: 9, title: "Week 13-14", subtitle: "Trees", topics: ["Binary trees", "Traversals", "BST"], steps: [{ id: 1, title: "Tree Basics", description: "Understand tree terminology." }, { id: 2, title: "Tree Traversals", description: "Master inorder, preorder, postorder." }, { id: 3, title: "Binary Search Trees", description: "Learn BST operations." }, { id: 4, title: "Practice Problems", description: "Solve 20+ tree problems." }] },
-            { id: 10, title: "Week 15-16", subtitle: "Heaps & Graphs", topics: ["Priority queues", "BFS", "DFS"], steps: [{ id: 1, title: "Heap Fundamentals", description: "Understand heap properties." }, { id: 2, title: "Graph Basics", description: "Learn graph representation." }, { id: 3, title: "BFS & DFS", description: "Master breadth and depth-first search." }, { id: 4, title: "Practice Problems", description: "Solve heap and graph problems." }] },
-            { id: 11, title: "Week 17-20", subtitle: "Graphs Advanced", topics: ["Dijkstra", "Topological sort"], steps: [{ id: 1, title: "Shortest Path", description: "Learn Dijkstra's algorithm." }, { id: 2, title: "Topological Sort", description: "Master DAG ordering." }, { id: 3, title: "Advanced Algorithms", description: "Learn about bridges." }, { id: 4, title: "Practice Problems", description: "Solve 20+ advanced graph problems." }] },
-            { id: 12, title: "Week 21-24", subtitle: "Dynamic Programming", topics: ["1D DP", "2D DP"], steps: [{ id: 1, title: "DP Intuition", description: "Build understanding of overlapping subproblems." }, { id: 2, title: "1D DP", description: "Master fibonacci, climbing stairs." }, { id: 3, title: "2D DP", description: "Learn matrix DP, LCS." }, { id: 4, title: "Advanced DP", description: "Tackle knapsack problems." }, { id: 5, title: "Practice Problems", description: "Solve 30+ DP problems." }] },
-            { id: 13, title: "Week 25-26", subtitle: "Final Sprint", topics: ["Greedy", "Bit manipulation", "Mocks"], steps: [{ id: 1, title: "Greedy Algorithms", description: "Learn activity selection patterns." }, { id: 2, title: "Bit Manipulation", description: "Master bitwise operations." }, { id: 3, title: "Mock Interviews", description: "Practice timed mocks." }, { id: 4, title: "Final Review", description: "Review all patterns." }] }
+            { id: 1, title: "Week 01", subtitle: "Big O Notation", topics: ["Time complexity", "Space complexity"], steps: [{ id: 1, title: "Big O Theory", description: "Understand time and space complexity analysis." }, { id: 2, title: "Practice", description: "Apply Big O analysis to code examples." }] },
+            { id: 2, title: "Week 02", subtitle: "Arrays Basics", topics: ["Array operations", "Memory layout"], steps: [{ id: 1, title: "Array Fundamentals", description: "Learn array memory layout and access patterns." }, { id: 2, title: "Practice Problems", description: "Solve array traversal problems." }] },
+            { id: 3, title: "Week 03", subtitle: "Two Pointers", topics: ["Sorted arrays", "Pair sums"], steps: [{ id: 1, title: "Two Pointer Pattern", description: "Master the two-pointer technique." }, { id: 2, title: "Practice", description: "Solve pair sum problems." }] },
+            { id: 4, title: "Week 04", subtitle: "Sliding Window", topics: ["Fixed window", "Variable window"], steps: [{ id: 1, title: "Sliding Window", description: "Learn sliding window techniques." }, { id: 2, title: "Practice", description: "Solve subarray problems." }] },
+            { id: 5, title: "Week 05", subtitle: "Kadane's Algorithm", topics: ["Max subarray", "DP intro"], steps: [{ id: 1, title: "Kadane's Algorithm", description: "Master the max subarray problem." }, { id: 2, title: "Practice", description: "Solve related problems." }] },
+            { id: 6, title: "Week 06", subtitle: "Strings Basics", topics: ["String manipulation", "Immutability"], steps: [{ id: 1, title: "String Operations", description: "Learn string methods and operations." }, { id: 2, title: "Practice", description: "Solve string problems." }] },
+            { id: 7, title: "Week 07", subtitle: "String Patterns", topics: ["Palindromes", "Anagrams"], steps: [{ id: 1, title: "String Patterns", description: "Master common string patterns." }, { id: 2, title: "Practice", description: "Solve palindrome problems." }] },
+            { id: 8, title: "Week 08", subtitle: "Hashing Intro", topics: ["HashMap", "HashSet"], steps: [{ id: 1, title: "Hashing Basics", description: "Understand hash functions and tables." }, { id: 2, title: "Practice", description: "Solve two-sum problems." }] },
+            { id: 9, title: "Week 09", subtitle: "Recursion Intuition", topics: ["Call stack", "Base cases"], steps: [{ id: 1, title: "Recursion Basics", description: "Build mental model of recursion." }, { id: 2, title: "Practice", description: "Solve factorial, fibonacci." }] },
+            { id: 10, title: "Week 10", subtitle: "Recursion Patterns", topics: ["Recursive patterns", "Backtracking"], steps: [{ id: 1, title: "Advanced Recursion", description: "Master recursive patterns." }, { id: 2, title: "Practice", description: "Solve subset problems." }] },
+            { id: 11, title: "Week 11", subtitle: "Sorting Algorithms", topics: ["Merge sort", "Quick sort"], steps: [{ id: 1, title: "Sorting Basics", description: "Learn bubble, selection, insertion sort." }, { id: 2, title: "Advanced Sorting", description: "Master merge and quick sort." }] },
+            { id: 12, title: "Week 12", subtitle: "Binary Search", topics: ["Binary search", "Search space"], steps: [{ id: 1, title: "Binary Search", description: "Master binary search on sorted arrays." }, { id: 2, title: "Practice", description: "Solve search problems." }] },
+            { id: 13, title: "Week 13", subtitle: "Linked Lists", topics: ["Singly list", "Doubly list"], steps: [{ id: 1, title: "Linked List Basics", description: "Understand node structure and traversal." }, { id: 2, title: "Reversal", description: "Master linked list reversal." }] },
+            { id: 14, title: "Week 14", subtitle: "Linked List Patterns", topics: ["Cycle detection", "Fast-slow"], steps: [{ id: 1, title: "Cycle Detection", description: "Learn Floyd's algorithm." }, { id: 2, title: "Practice", description: "Solve linked list problems." }] },
+            { id: 15, title: "Week 15", subtitle: "Stacks", topics: ["LIFO", "Stack operations"], steps: [{ id: 1, title: "Stack Operations", description: "Master push, pop, peek." }, { id: 2, title: "Practice", description: "Solve stack problems." }] },
+            { id: 16, title: "Week 16", subtitle: "Queues", topics: ["FIFO", "BFS pattern"], steps: [{ id: 1, title: "Queue Operations", description: "Understand queue implementations." }, { id: 2, title: "Practice", description: "Solve queue problems." }] },
+            { id: 17, title: "Week 17", subtitle: "Trees Basics", topics: ["Tree terminology", "Traversal"], steps: [{ id: 1, title: "Tree Basics", description: "Understand tree structure." }, { id: 2, title: "Traversals", description: "Master inorder, preorder, postorder." }] },
+            { id: 18, title: "Week 18", subtitle: "Binary Search Trees", topics: ["BST operations", "Validate BST"], steps: [{ id: 1, title: "BST Basics", description: "Learn BST insert, delete, search." }, { id: 2, title: "Practice", description: "Solve BST problems." }] },
+            { id: 19, title: "Week 19", subtitle: "Heaps", topics: ["Priority queue", "Heapify"], steps: [{ id: 1, title: "Heap Fundamentals", description: "Understand heap properties." }, { id: 2, title: "Practice", description: "Solve heap problems." }] },
+            { id: 20, title: "Week 20", subtitle: "Graphs Basics", topics: ["Graph representation", "BFS/DFS"], steps: [{ id: 1, title: "Graph Basics", description: "Learn graph representation." }, { id: 2, title: "Traversals", description: "Master BFS and DFS." }] },
+            { id: 21, title: "Week 21", subtitle: "Graphs Advanced", topics: ["Shortest path", "Dijkstra"], steps: [{ id: 1, title: "Shortest Path", description: "Learn Dijkstra's algorithm." }, { id: 2, title: "Practice", description: "Solve path problems." }] },
+            { id: 22, title: "Week 22", subtitle: "Topological Sort", topics: ["DAG", "Dependency"], steps: [{ id: 1, title: "Topo Sort", description: "Master topological ordering." }, { id: 2, title: "Practice", description: "Solve ordering problems." }] },
+            { id: 23, title: "Week 23", subtitle: "DP Foundations", topics: ["1D DP", "Memoization"], steps: [{ id: 1, title: "DP Intuition", description: "Build DP understanding." }, { id: 2, title: "1D DP", description: "Master fibonacci, climbing stairs." }] },
+            { id: 24, title: "Week 24", subtitle: "DP Patterns", topics: ["2D DP", "Knapsack"], steps: [{ id: 1, title: "2D DP", description: "Learn matrix DP patterns." }, { id: 2, title: "Knapsack", description: "Master knapsack problems." }] },
+            { id: 25, title: "Week 25", subtitle: "Greedy Algorithms", topics: ["Activity selection", "Huffman"], steps: [{ id: 1, title: "Greedy Basics", description: "Learn greedy techniques." }, { id: 2, title: "Practice", description: "Solve greedy problems." }] },
+            { id: 26, title: "Week 26", subtitle: "Final Sprint", topics: ["Bit manipulation", "Mocks"], steps: [{ id: 1, title: "Bit Manipulation", description: "Master bitwise operations." }, { id: 2, title: "Mock Interviews", description: "Practice timed interviews." }, { id: 3, title: "Final Review", description: "Review all patterns." }] }
         ];
 
         const philosophyData = [
@@ -138,6 +151,11 @@
                 return Math.round((progress.totalStepsCompleted / totalSteps) * 100);
             }, [progress.totalStepsCompleted]);
 
+            // Debug logging
+            useEffect(() => {
+                console.log('Progress updated:', progress);
+            }, [progress]);
+
             return { progress, setCurrentWeek, getStepStatus, updateStepStatus, getWeekProgress, getOverallProgress };
         }
 
@@ -153,6 +171,12 @@
                 if (weekId < selectedWeek) return 'available';
                 if (weekId === selectedWeek) return 'current';
                 return 'locked';
+            };
+
+            const handleClick = (weekId) => {
+                console.log('Week clicked:', weekId);
+                alert('Navigating to Week ' + weekId);
+                onWeekSelect(weekId);
             };
 
             return (
@@ -176,8 +200,12 @@
                                 const progress = getWeekProgress(week.id, week.steps.length);
                                 const isSelected = selectedWeek === week.id;
                                 return (
-                                    <button key={week.id} onClick={() => onWeekSelect(week.id)}
-                                        className={`w-full flex items-center gap-3 p-3 rounded-xl transition-all duration-200 ${isSelected ? 'bg-gradient-to-r from-[#8b5cf6]/20 to-[#3b82f6]/20 border border-[#8b5cf6]/30' : 'hover:bg-[#334155] border border-transparent'}`}>
+                                    <div 
+                                        key={week.id} 
+                                        onClick={() => handleClick(week.id)}
+                                        className={`w-full flex items-center gap-3 p-3 rounded-xl transition-all duration-200 cursor-pointer ${isSelected ? 'bg-gradient-to-r from-[#8b5cf6]/20 to-[#3b82f6]/20 border border-[#8b5cf6]/30' : 'hover:bg-[#334155] border border-transparent'}`}
+                                        style={{ cursor: 'pointer' }}
+                                    >
                                         <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${status === 'completed' ? 'bg-[#10b981] text-white' : ''} ${status === 'in-progress' || status === 'current' ? 'bg-[#8b5cf6] text-white node-pulse' : ''} ${status === 'available' ? 'bg-[#334155] text-slate-300 border border-slate-600' : ''} ${status === 'locked' ? 'bg-[#1e293b] text-slate-500 border border-slate-700' : ''}`}>
                                             {status === 'completed' ? '✓' : week.id}
                                         </div>
@@ -190,7 +218,7 @@
                                                 <div className={`h-full rounded-full transition-all duration-300 ${status === 'completed' ? 'bg-[#10b981]' : 'bg-gradient-to-r from-[#8b5cf6] to-[#3b82f6]'}`} style={{ width: `${progress}%` }} />
                                             </div>
                                         </div>
-                                    </button>
+                                    </div>
                                 );
                             })}
                         </div>
@@ -356,7 +384,12 @@
 
             const currentWeekData = roadmapData.find(w => w.id === selectedWeek) || roadmapData[0];
 
-            const handleWeekSelect = (weekId) => { setSelectedWeek(weekId); setCurrentWeek(weekId); };
+            const handleWeekSelect = (weekId) => { 
+                console.log('Week selected:', weekId);
+                alert('App received: Week ' + weekId);
+                setSelectedWeek(weekId); 
+                setCurrentWeek(weekId); 
+            };
 
             const handleStepAction = (stepId, currentStatus) => {
                 let newStatus;
@@ -369,7 +402,7 @@
                 updateStepStatus(selectedWeek, stepId, newStatus);
             };
 
-            const overallProgress = getOverallProgress(roadmapData.length, 4);
+            const overallProgress = getOverallProgress(26, 2);
 
             return (
                 <div className="flex min-h-screen bg-[#0f172a]">

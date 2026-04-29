@@ -1,0 +1,235 @@
+# 📘 Amazon OA Revision Notes (Session)
+
+---
+
+## 🧩 1. Inventory Batching (Greedy + Sorting)
+
+### 📌 Problem
+Group items into batches of 3 such that:
+- Each batch has exactly 3 items
+- `max - min ≤ 2`
+
+Return `true` if all items can be grouped, else `false`.
+
+---
+
+### 🧠 Key Idea
+- Sort the array
+- Check every consecutive group of 3
+
+---
+
+### ✅ Approach
+1. Sort items  
+2. If `n % 3 != 0` → return false  
+3. For every group of 3:
+   - check `items[i+2] - items[i] <= 2`
+
+---
+
+### 💻 Code
+
+```java
+import java.util.*;
+
+class Solution {
+    public boolean canFormBatches(int[] items) {
+        Arrays.sort(items);
+
+        if (items.length % 3 != 0) return false;
+
+        for (int i = 0; i < items.length; i += 3) {
+            if (items[i + 2] - items[i] > 2) return false;
+        }
+
+        return true;
+    }
+}
+❌ Mistakes Made
+Used items.sort() ❌
+Wrong condition: items[i] - items[i+2] ❌
+🎯 Pattern
+
+Greedy + Sorting
+
+🧩 2. Highly Active Users (Sliding Window + HashMap)
+📌 Problem
+
+Find users who performed:
+
+At least 3 "login" actions
+Within any 60-second window
+
+Return user IDs sorted lexicographically.
+
+🧠 Key Idea
+Group logs by user
+Sort timestamps
+Use sliding window of size 3
+✅ Approach
+Map user → login timestamps
+Sort timestamps
+
+Check window:
+
+times[i+2] - times[i] <= 60
+Add user if condition satisfied
+Sort result
+💻 Code
+import java.util.*;
+
+class Solution {
+    public List<String> highlyActiveUsers(String[] logs) {
+
+        Map<String, List<Integer>> map = new HashMap<>();
+
+        for (String log : logs) {
+            String[] parts = log.split(" ");
+            String user = parts[0];
+            String action = parts[1];
+            int time = Integer.parseInt(parts[2]);
+
+            if (action.equals("login")) {
+                map.putIfAbsent(user, new ArrayList<>());
+                map.get(user).add(time);
+            }
+        }
+
+        List<String> result = new ArrayList<>();
+
+        for (String user : map.keySet()) {
+            List<Integer> times = map.get(user);
+
+            if (times.size() < 3) continue;
+
+            Collections.sort(times);
+
+            for (int i = 0; i <= times.size() - 3; i++) {
+                if (times.get(i + 2) - times.get(i) <= 60) {
+                    result.add(user);
+                    break;
+                }
+            }
+        }
+
+        Collections.sort(result);
+        return result;
+    }
+}
+❌ Mistakes Made
+Used == for string comparison ❌
+Counted total logins instead of window ❌
+Missed sorting timestamps ❌
+🎯 Pattern
+
+Sliding Window + HashMap
+
+🧩 3. Most Frequent 3-Sequence (Hard)
+📌 Problem
+
+Find the most frequent sequence of 3 products:
+
+Purchased by the same user
+In strictly increasing timestamp order
+Count each sequence once per user
+
+If tie → return lexicographically smallest sequence.
+
+🧠 Key Idea
+Group by user
+Sort by time
+Generate all combinations of size 3
+Count globally
+✅ Approach
+Map user → list of (time, product)
+Sort each user’s list by time
+Generate all 3-sequences
+Use a set to avoid duplicates per user
+Count frequency globally
+Return max frequency (lex smallest if tie)
+💻 Code
+import java.util.*;
+
+class Solution {
+
+    class Pair {
+        int time;
+        String product;
+
+        Pair(int time, String product) {
+            this.time = time;
+            this.product = product;
+        }
+    }
+
+    public List<String> mostFrequentSequence(String[] logs) {
+
+        Map<String, List<Pair>> map = new HashMap<>();
+
+        for (String log : logs) {
+            String[] parts = log.split(" ");
+            String user = parts[0];
+            String product = parts[1];
+            int time = Integer.parseInt(parts[2]);
+
+            map.putIfAbsent(user, new ArrayList<>());
+            map.get(user).add(new Pair(time, product));
+        }
+
+        Map<String, Integer> countMap = new HashMap<>();
+
+        for (String user : map.keySet()) {
+
+            List<Pair> list = map.get(user);
+            if (list.size() < 3) continue;
+
+            Collections.sort(list, (a, b) -> a.time - b.time);
+
+            List<String> products = new ArrayList<>();
+            for (Pair p : list) {
+                products.add(p.product);
+            }
+
+            Set<String> seen = new HashSet<>();
+
+            int n = products.size();
+
+            for (int i = 0; i < n; i++) {
+                for (int j = i + 1; j < n; j++) {
+                    for (int k = j + 1; k < n; k++) {
+
+                        String seq = products.get(i) + "," +
+                                     products.get(j) + "," +
+                                     products.get(k);
+
+                        if (seen.add(seq)) {
+                            countMap.put(seq, countMap.getOrDefault(seq, 0) + 1);
+                        }
+                    }
+                }
+            }
+        }
+
+        String best = "";
+        int max = 0;
+
+        for (String seq : countMap.keySet()) {
+            int freq = countMap.get(seq);
+
+            if (freq > max || (freq == max && seq.compareTo(best) < 0)) {
+                best = seq;
+                max = freq;
+            }
+        }
+
+        return Arrays.asList(best.split(","));
+    }
+}
+❌ Mistakes Made
+Wrong data structure ❌
+Lost timestamp ordering ❌
+Missed uniqueness per user ❌
+Syntax issues ❌
+🎯 Pattern
+
+HashMap + Sorting + Combination

@@ -233,3 +233,250 @@ Syntax issues ❌
 🎯 Pattern
 
 HashMap + Sorting + Combination
+# 📘 Amazon OA Revision Notes (Session 2)
+
+---
+
+## 🧩 4. Minimum Time to Infect All Servers (Graph + BFS)
+
+### 📌 Problem
+A failure starts from a given server and spreads to directly connected servers every second.
+
+Given:
+- `n` servers labeled from 1 to n
+- `connections` (bidirectional edges)
+- `start` node
+
+Return:
+- Minimum time to infect all servers
+- `-1` if not all servers can be reached
+
+---
+
+### 🧠 Key Idea
+- Represent as a graph
+- Use BFS (level-order traversal)
+- Each level = 1 second
+
+---
+
+### ✅ Approach
+1. Build adjacency list  
+2. BFS from `start`  
+3. Track visited nodes  
+4. Count levels (time)  
+5. If any node is unvisited → return -1  
+
+---
+
+### 💻 Code
+
+```java
+import java.util.*;
+
+class Solution {
+    public int minTimeToInfect(int n, int[][] connections, int start) {
+
+        Map<Integer, List<Integer>> graph = new HashMap<>();
+
+        for (int i = 1; i <= n; i++) {
+            graph.put(i, new ArrayList<>());
+        }
+
+        for (int[] edge : connections) {
+            graph.get(edge[0]).add(edge[1]);
+            graph.get(edge[1]).add(edge[0]);
+        }
+
+        Queue<Integer> queue = new LinkedList<>();
+        boolean[] visited = new boolean[n + 1];
+
+        queue.add(start);
+        visited[start] = true;
+
+        int time = -1;
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            time++;
+
+            for (int i = 0; i < size; i++) {
+                int node = queue.poll();
+
+                for (int nei : graph.get(node)) {
+                    if (!visited[nei]) {
+                        visited[nei] = true;
+                        queue.add(nei);
+                    }
+                }
+            }
+        }
+
+        for (int i = 1; i <= n; i++) {
+            if (!visited[i]) return -1;
+        }
+
+        return time;
+    }
+}
+❌ Mistakes Made
+Didn’t build adjacency list
+Wrong BFS traversal logic
+Incremented time per node instead of per level
+🎯 Pattern
+
+Graph + BFS (Level Order Traversal)
+
+🧩 5. Task Scheduler (Greedy + Frequency)
+📌 Problem
+
+Tasks must be executed with cooldown n.
+
+Same task must wait n seconds before reuse.
+
+Return minimum time required to finish all tasks.
+
+🧠 Key Idea
+Most frequent task determines schedule
+Use mathematical formula instead of simulation
+✅ Approach
+Count frequency of tasks
+Find:
+maxFreq = highest frequency
+maxCount = number of tasks with that frequency
+Apply formula:
+(maxFreq - 1) * (n + 1) + maxCount
+Final result:
+max(totalTasks, formula)
+💻 Code
+import java.util.*;
+
+class Solution {
+    public int leastInterval(char[] tasks, int n) {
+
+        int[] freq = new int[26];
+
+        for (char c : tasks) {
+            freq[c - 'A']++;
+        }
+
+        int maxFreq = 0;
+        for (int f : freq) {
+            maxFreq = Math.max(maxFreq, f);
+        }
+
+        int maxCount = 0;
+        for (int f : freq) {
+            if (f == maxFreq) maxCount++;
+        }
+
+        int result = (maxFreq - 1) * (n + 1) + maxCount;
+
+        return Math.max(tasks.length, result);
+    }
+}
+❌ Mistakes Made
+Tried full simulation
+Didn’t identify dominant task
+Missed final max() logic
+🎯 Pattern
+
+Greedy + Frequency Counting
+
+🧩 6. Suspicious File Access (Sliding Window + Set)
+📌 Problem
+
+A user is suspicious if:
+
+Accesses at least 3 distinct files
+Within any 300-second window
+🧠 Key Idea
+Group logs per user
+Sort by time
+Use sliding window + set for distinct tracking
+✅ Approach
+Map user → list of (time, file)
+Sort by time
+Use sliding window:
+Expand right pointer
+Shrink left pointer if time difference > 300
+Maintain a set of distinct files
+If set size ≥ 3 → mark user
+💻 Code
+import java.util.*;
+
+class Solution {
+
+    class Pair {
+        int time;
+        String file;
+
+        Pair(int time, String file) {
+            this.time = time;
+            this.file = file;
+        }
+    }
+
+    public List<String> findSuspiciousUsers(String[] logs) {
+
+        Map<String, List<Pair>> map = new HashMap<>();
+
+        for (String log : logs) {
+            String[] parts = log.split(" ");
+            String user = parts[0];
+            String file = parts[1];
+            int time = Integer.parseInt(parts[2]);
+
+            map.putIfAbsent(user, new ArrayList<>());
+            map.get(user).add(new Pair(time, file));
+        }
+
+        List<String> result = new ArrayList<>();
+
+        for (String user : map.keySet()) {
+
+            List<Pair> list = map.get(user);
+            Collections.sort(list, (a, b) -> a.time - b.time);
+
+            int left = 0;
+            Set<String> set = new HashSet<>();
+
+            for (int right = 0; right < list.size(); right++) {
+
+                set.add(list.get(right).file);
+
+                while (list.get(right).time - list.get(left).time > 300) {
+                    set.remove(list.get(left).file);
+                    left++;
+                }
+
+                if (set.size() >= 3) {
+                    result.add(user);
+                    break;
+                }
+            }
+        }
+
+        Collections.sort(result);
+        return result;
+    }
+}
+❌ Mistakes Made
+Used counting instead of distinct tracking
+Missed sliding window logic
+Didn’t handle time constraint correctly
+🎯 Pattern
+
+Sliding Window + Set + Sorting
+
+🔥 Final Summary
+🧠 Patterns Covered
+Problem	Pattern
+Server infection	Graph + BFS
+Task scheduler	Greedy + Frequency
+Suspicious access	Sliding Window + Set
+⚠️ Common Mistakes
+Incorrect pattern identification
+Overcomplicating logic
+Missing constraints
+Syntax errors under pressure

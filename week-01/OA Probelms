@@ -480,3 +480,229 @@ Incorrect pattern identification
 Overcomplicating logic
 Missing constraints
 Syntax errors under pressure
+# 📘 Amazon OA Revision (Set 3)
+
+---
+
+## 🧩 Problem 1: Minimum Weight Difference
+
+### 📄 Problem
+
+A system receives a list of integers representing shipment weights.
+
+The system must divide the shipments into two groups such that:
+
+- Each shipment is assigned to exactly one group  
+- The difference between the total weights of the two groups is minimized  
+
+Return the minimum possible difference.
+
+---
+
+### 💻 Function Signature
+
+```java
+class Solution {
+    public int minimumDifference(int[] weights) {
+        
+    }
+}
+📥 Example
+Input:
+weights = [1,6,11,5]
+
+Output:
+1
+📘 Explanation
+
+Let total sum = S.
+
+We divide into two groups:
+
+Group1 = x
+Group2 = S - x
+
+Difference:
+
+|x - (S - x)| = |S - 2x|
+
+To minimize difference, we need x as close as possible to S/2.
+
+🧠 Detailed Approach
+
+We use a boolean DP array:
+
+dp[j] = whether sum j is possible
+
+Initialization:
+
+dp[0] = true
+
+Transition:
+
+dp[j] = dp[j] OR dp[j - w]
+
+This means:
+
+Either we already had sum j
+Or we can make j using current number w
+💻 Solution
+import java.util.*;
+
+class Solution {
+    public int minimumDifference(int[] weights) {
+
+        int sum = 0;
+        for (int w : weights) sum += w;
+
+        int target = sum / 2;
+
+        boolean[] dp = new boolean[target + 1];
+        dp[0] = true;
+
+        for (int w : weights) {
+            for (int j = target; j >= w; j--) {
+                dp[j] = dp[j] || dp[j - w];
+            }
+        }
+
+        int best = 0;
+        for (int i = target; i >= 0; i--) {
+            if (dp[i]) {
+                best = i;
+                break;
+            }
+        }
+
+        return sum - 2 * best;
+    }
+}
+🧩 Problem 2: Final Sum After Operations
+📄 Problem
+
+A system processes a sequence of integers representing operations.
+
+A positive number means adding a value
+-1 means removing the most recently added value
+
+Return the sum of all remaining values after processing all operations.
+
+💻 Function Signature
+class Solution {
+    public int finalSum(int[] operations) {
+        
+    }
+}
+📥 Example
+Input:
+operations = [5, 2, -1, 3, -1, 4]
+
+Output:
+9
+📘 Explanation
+
+Process operations sequentially:
+
+Add values normally
+When encountering -1, remove last inserted value
+
+Final values remain in stack-like structure.
+
+🧠 Detailed Approach
+
+Use a stack:
+
+Push positive numbers
+Pop when -1 appears
+Sum remaining values
+💻 Solution
+import java.util.*;
+
+class Solution {
+    public int finalSum(int[] operations) {
+
+        Deque<Integer> stack = new ArrayDeque<>();
+
+        for (int op : operations) {
+            if (op == -1) {
+                if (!stack.isEmpty()) stack.pop();
+            } else {
+                stack.push(op);
+            }
+        }
+
+        int sum = 0;
+        for (int val : stack) {
+            sum += val;
+        }
+
+        return sum;
+    }
+}
+🧩 Problem 3: Remove Adjacent Duplicates
+📄 Problem
+
+A system processes a string consisting of lowercase letters.
+
+You must repeatedly remove adjacent duplicate characters until no such pairs remain.
+
+Return the final string.
+
+💻 Function Signature
+class Solution {
+    public String removeDuplicates(String s) {
+        
+    }
+}
+📥 Example
+Input:
+s = "abbaca"
+
+Output:
+"ca"
+📘 Explanation
+
+Process step by step:
+
+abbaca → aaca → ca
+
+Each time two adjacent characters are same, remove them.
+
+🧠 Detailed Approach
+
+Use a stack:
+
+If top of stack == current char → remove (pop)
+Else → push
+
+This automatically handles chain removals.
+
+💻 Solution
+import java.util.*;
+
+class Solution {
+    public String removeDuplicates(String s) {
+
+        Deque<Character> stack = new ArrayDeque<>();
+
+        for (char c : s.toCharArray()) {
+            if (!stack.isEmpty() && stack.peek() == c) {
+                stack.pop();
+            } else {
+                stack.push(c);
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+
+        while (!stack.isEmpty()) {
+            sb.append(stack.pop());
+        }
+
+        return sb.reverse().toString();
+    }
+}
+🔥 Key Learnings from This Set
+Problem 1 → splitting into 2 groups → subset-based reasoning
+Problem 2 → stack simulation
+Problem 3 → stack for cancellation logic
